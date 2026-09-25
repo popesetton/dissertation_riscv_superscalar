@@ -32,6 +32,8 @@ The baseline processor features:
 - Pipeline stalls for load-use and branch dependencies.
 - Pipeline flushing following taken branches and jumps.
 
+![Single Issue Schematic](images/single_issue_schematic.png)
+
 ### Dual-Issue Implementation
 
 The superscalar extension introduces a second instruction datapath, allowing up to two independent instructions to be issued per clock cycle.
@@ -43,6 +45,8 @@ Key architectural additions include:
 - **Expanded Register File:** Four read ports and two write ports to support simultaneous execution.
 - **Extended Hazard Logic:** Cross-issue RAW dependency detection and additional forwarding paths.
 - **Dynamic Next-Fetch Selection:** Advances the PC by 4 or 8 bytes depending on whether one or two instructions are issued.
+
+![Dual Issue Schematic](images/dual_issue_schematic.png)
 
 ## Verification and Validation
 
@@ -73,7 +77,7 @@ The following results compare both implementations using the same Fibonacci benc
 | Estimated total power | 93 mW | 110 mW |
 | Timing slack | 2.719 ns | 1.330 ns |
 
-The dual-issue processor achieved a **26.3% reduction in execution cycles**, at the expense of increased FPGA resource utilisation and an 18.3% increase in estimated total power consumption.
+The dual-issue processor achieved a **26.3% reduction in execution cycles**, at the expense of increased FPGA resource utilisation and an 18.3% increase in estimated total power consumption and increased FPGA area usage.
 
 ## Tools and Technologies
 
