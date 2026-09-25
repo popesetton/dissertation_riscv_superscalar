@@ -1,0 +1,15 @@
+addi x1, x0, 0
+addi x2, x0, 1
+addi x5, x0, 8
+addi x4, x0, 0
+sb x1, 0(x4)
+sb x2, 1(x4)
+branch:
+add x3, x1, x2
+addi x4, x4, 1
+sb x3, 1(x4)
+addi x1, x2, 0
+addi x2, x3, 0
+BNE x4, x5, branch
+addi x6, x0, 24 
+
